@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ricky Hariana Ardiansyah</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<div class="container">
+	    <h1 class="center">Maven Hiring Test Logical</h1>
+	    <div class="generate">
+	      <input type="text" id="inpute" name="input" /><br />
+	      <button id="start">start</button>
+	    </div>
+	    <div id="wadah" style="height: 130px; width: 100%; overflow-x: scroll; float: left; display: flex; align-items: end;">
+	    </div>
+	</div>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$('#start').click(function(){
+				var status = $('#start').html();
+			
+				if (status == 'start')
+					$('#start').html('stop');
+				else
+					$('#start').html('start');
+
+				generate();
+				start();
+			});
+		});
+
+		function start(){
+			var status = $('#start').html();
+			
+			if (status == 'stop') {
+				setTimeout(function(){
+					var status = $('#start').html();
+					
+					if (status == 'stop'){
+						generate();
+						start('lanjut');
+					}
+				}, 3000);
+			}
+		}
+
+		function generate() {
+			$('#wadah').html("");
+			var input = $('#inpute').val();
+
+			for (var i = 0; i < parseInt(input); i++) {
+				var random = Math.floor(Math.random() * 100);
+
+				if (random <= 25) {
+					$('#wadah').append('<div class="card" style="background: green; margin-left: 2px; float: left; width: 50px; height: '+random+'px; text-align: center;">'+random+'</div>');
+				}else if (random <= 50) {
+					$('#wadah').append('<div class="card" style="background: yellow; margin-left: 2px; float: left; width: 50px; height: '+random+'px; text-align: center;">'+random+'</div>');
+				}else if (random <= 75) {
+					$('#wadah').append('<div class="card" style="background: red; margin-left: 2px; float: left; width: 50px; height: '+random+'px; text-align: center;">'+random+'</div>');
+				}else if (random <= 100) {
+					$('#wadah').append('<div class="card" style="background: blue; margin-left: 2px; float: left; width: 50px; height: '+random+'px; text-align: center;">'+random+'</div>');
+				}
+			}
+
+		}
+	</script>	
+</body>
+</html>
