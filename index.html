@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ricky Hariana Ardiansyah</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-	<div class="container">
-	    <h1 class="center">Maven Hiring Test Logical</h1>
-	    <div class="generate">
-	      <input type="text" id="inpute" name="input" /><br />
-	      <button onclick="generate()">generate</button>
-	    </div>
-	    <div id="wadah">
-	    	
-	    </div>
-	</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ricky Hariana Ardiansyah</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">Maven Hiring Test Logical</h1>
+      <div class="generate">
+        <input type="text" id="inpute" name="input" /><br />
+        <button onclick="generate()">generate</button>
+      </div>
+      <div id="wadah"></div>
+    </div>
 
-	<script type="text/javascript">
-		function generate() {
-			$('#wadah').html('');
-			var input = $('#inpute').val();
-			for (var i = 0; i < input.length; i++) {
-				var res = input.charAt(i);
-				for (var j = i; j < input.length-1; j++) {
-					res += '0';
-				}
-				$('#wadah').append('<div class="border">'+res+'</div>');
-			}
-		}
-	</script>	
-</body>
+    <script type="text/javascript">
+      function generate() {
+        $("#wadah").html("");
+        var input = $("#inpute").val();
+        for (var i = 0; i < input.length; i++) {
+          var res = input.charAt(i);
+          for (var j = i; j < input.length - 1; j++) {
+            res += "0";
+          }
+          $("#wadah").append('<div class="border">' + res + "</div>");
+        }
+      }
+    </script>
+  </body>
 </html>
